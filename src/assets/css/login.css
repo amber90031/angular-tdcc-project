@@ -1,0 +1,102 @@
+/* login body */
+
+.l-body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+/* login content */
+
+.l-content {
+  font-size: 20px;
+  color: #95989a;
+  width: 1024px;
+  line-height: 24px;
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 200px;
+  margin: 0px auto;
+}
+
+/* login tag */
+
+.l-tag {
+  text-align: center;
+  padding: 0px;
+}
+
+.l-tag .l-tag-item {
+  width: 259px;
+  display: inline;
+  padding-top: 18px;
+  padding-bottom: 19px;
+  border: 1px solid #95989a;
+  background-color: #ff8229;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.l-tag button.l-tag-item:hover {
+  background-color: rgba(255, 219, 184, 0.5);
+  color: #ff8229;
+}
+
+/* login form */
+
+.l-form {
+  background-color: #ffffff;
+  border: 1px solid #95989a;
+  margin: 0px auto;
+  width: 575px;
+  padding-top: 73px;
+  padding-bottom: 59px;
+}
+
+.l-form .l-field {
+  text-align: left;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.l-form .l-field .l-fieldname {
+  display: inline-block;
+  width: 37%;
+  /*1-(357/575)=0.37...*/
+  text-align: right;
+}
+
+.l-form .l-field .l-fielddata {
+  display: inline-block;
+  width: 220px;
+}
+
+.l-form .l-field input {
+  border: 1px solid #ffffff;
+  border-bottom: 1px solid #95989a;
+}
+
+/* button */
+
+.l-btn {
+  font-size: 20px;
+  height: 43px;
+  padding: 8px 16px 7px;
+  margin-top: 28px;
+}
+
+@media (max-width: 979px) {
+  .l-content.m {
+    width: 100%;
+  }
+  .l-tag .l-tag-item.m {
+    display: block;
+    width: 100%;
+  }
+  .l-form.m {
+    width: 100%;
+  }
+}

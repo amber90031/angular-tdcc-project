@@ -1,0 +1,155 @@
+﻿/* terms body */
+
+.t-body {
+  width: 100%;
+  height: 854.99px;
+  margin: 0 auto;
+  font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+/* terms header */
+
+.t-header {
+  position: fixed;
+  width: 100%;
+  height: 139px;
+  border: 1px solid #95989a;
+  color: #95989a;
+  background-color: #e2e2e2;
+  padding: 0px;
+}
+
+.t-header .t-header-pc .t-logo {
+  display: inline-block;
+  width: 297.52px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.t-header .t-header-pc .t-hellouser {
+  height: 57px;
+  display: inline-block;
+  margin: 0px;
+  padding-top: 42px;
+  padding-bottom: 40px;
+}
+
+.t-header .t-header-pc .t-hellouser p {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0px;
+}
+
+.t-header-m {
+  display: none;
+}
+
+/* terms content */
+
+.t-content {
+  padding: 10%;
+  padding-top: 140px;
+}
+
+/* terms card */
+
+.t-card {
+  margin: 0 auto;
+  padding: 53.7px 50.58px 29.66px 64.6px;
+  border: 1px solid #95989a;
+  border-radius: 20px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #95989a;
+}
+
+/* button */
+
+.t-group {
+  text-align: center;
+  padding: 0px;
+  margin-top: 66.85px;
+}
+
+.t-group .t-group-btn {
+  display: inline;
+  width: 200px;
+  padding-top: 11.09px;
+  padding-bottom: 10.64px;
+  margin-left: 56.645px;
+  /* 117.29/2= 56.645*/
+  margin-right: 56.645px;
+}
+
+.t-version {
+  text-align: right;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 15.26px;
+}
+
+/* terms 資料項目層級*/
+
+.t-p-lv1 {
+  margin: 0px 0px 0px 24px;
+  text-indent: -24pt;
+}
+
+.t-p-lv2 {
+  margin: 0px 0px 0px 48px;
+  text-indent: -24pt;
+}
+
+.t-p-lv2-s {
+  margin: 0px 0px 0px 24pt;
+}
+
+header {
+  background-color: #e2e2e2;
+  justify-content: end;
+}
+
+footer {
+  display: none;
+}
+
+@media (max-width: 979px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .t-content.m {
+    padding: 0px;
+    padding-top: 0px;
+  }
+  .t-card.m {
+    margin: 0px;
+    width: auto;
+    border-style: none;
+    padding: 82px 18px 0px;
+  }
+  .t-header.m {
+    margin: 0px auto;
+    text-align: center;
+    height: 76px;
+  }
+  .t-header-m {
+    display: block;
+    font-size: 24px;
+  }
+  .t-header-pc {
+    display: none;
+  }
+  .t-group.m {
+    padding-top: 31px;
+    margin: 0 auto;
+  }
+  .t-group .t-group-btn.m {
+    display: inline-block;
+    width: 80%;
+    /* 1-(36*2)/360=0.8 */
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

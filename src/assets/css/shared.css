@@ -1,0 +1,150 @@
+/*header*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5em;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(149, 152, 154);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #95989a;
+}
+
+/*header-logo*/
+.header-logo {
+  height: 5em;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo a {
+  height: 5em;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 80%;
+}
+
+/*header-menu*/
+header label {
+  display: none;
+}
+
+header input {
+  display: none;
+}
+
+header nav {
+  margin-right: 15px;
+}
+
+header nav li {
+  display: inline;
+  border-right: 1px solid #95989a;
+  padding: 5px;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: #95989a;
+}
+
+/*footer*/
+footer {
+  border-top: 1px solid rgb(149, 152, 154);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color: rgb(149, 152, 154);
+  font-size: 0.875rem;
+}
+
+footer div {
+  margin: 15px;
+}
+
+.footer-line {
+  width: 10px;
+  height: 50px;
+  border-right: 1px solid #95989a;
+}
+
+@media (max-width: 979px) {
+  /*header*/
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  /*header-menu*/
+  header label {
+    display: block;
+    margin: 15px;
+  }
+  header input + nav ul {
+    display: none;
+  }
+  header input:checked + nav ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #0f296f;
+  }
+  .menu-button {
+    background: #0f296f;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
+  .menu-button-lines {
+    width: 18px;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    margin-left: 11px;
+    margin-top: 19px;
+  }
+  .menu-button-lines-1 {
+    -webkit-transform: translate3d(0, -8px, 0);
+  }
+  .menu-button-lines-3 {
+    -webkit-transform: translate3d(0, 8px, 0);
+  }
+  header nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+  header nav li {
+    display: unset;
+    border-right: 0px solid #95989a;
+    padding: 0px;
+  }
+  header nav li a {
+    display: block;
+    padding: 20px 20px;
+    border: 1px solid #95989a;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  header nav li a:hover {
+    background-color: #ffffff;
+    color: #0f296f;
+  }
+  /*footer*/
+  footer {
+    display: block;
+  }
+  .footer-line {
+    display: none;
+  }
+}

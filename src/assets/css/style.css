@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+body * {
+  font-family: 'Helvetica Neue', 微軟正黑體, Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font-size: 18px;
+}
+
+/* button */
+
+button {
+  background-color: #ffffff;
+  border: 1px solid #95989a;
+  margin: 0px auto;
+  color: #95989a;
+  padding: 5px 16px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* input */
+
+input {
+  height: 37px;
+  border: 1px solid #ffffff;
+  border-bottom: 1px solid #95989a;
+}
+
+/* select */
+
+select {
+  height: 37px;
+  border: 1px solid #95989a;
+}
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 5em;
+}
+
+@media screen and (max-width: 979px) {
+  .container {
+    width: 100%;
+  }
+}
