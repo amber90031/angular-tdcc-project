@@ -101,37 +101,6 @@
   color: black;
 }
 
-/* 股東會資訊part */
-.c-meeting-info {
-  margin-top: 10px;
-}
-.c-meeting-info > div:nth-child(1) {
-  border: 1px solid black;
-  padding: 4px;
-  width: 15%;
-  background: #d4d4d4;
-  text-align: center;
-}
-.c-meeting-info > div:nth-child(2) {
-  border: 1px solid black;
-  padding: 20px;
-}
-.c-info-search > div {
-  display: inline-block;
-  width: 49%;
-  margin: 5px 0;
-}
-.c-info-result table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.c-info-result th,
-.c-info-result td {
-  border-bottom: 1px solid gray;
-  text-align: center;
-  padding: 4px;
-}
-
 @media (max-width: 979px) {
   .c-news .c-news-label {
     width: 20%;
@@ -172,45 +141,5 @@
     float: unset;
     width: 80%;
     min-height: 200px;
-  }
-
-  /* 股東會資訊part */
-  .c-meeting-info > div:nth-child(1) {
-    width: auto;
-  }
-  .c-meeting-info > div:nth-child(2) {
-    border: none;
-  }
-
-  .c-info-search > div {
-    width: 100%;
-  }
-  .c-info-search > div > label {
-    display: block;
-  }
-
-  .c-info-result tr {
-    display: block;
-    padding: 0 20px;
-  }
-  .c-info-result tbody tr {
-    border: 1px solid gray;
-    margin: 10px 0;
-    padding: 20px;
-  }
-  .c-info-result th,
-  .c-info-result td {
-    display: inline-block;
-    border: none;
-    text-align: left;
-    padding: 4px 0;
-  }
-  .c-info-result th,
-  .c-info-result td {
-    width: 49%;
-  }
-  .c-info-result th:nth-child(3),
-  .c-info-result td:nth-child(3) {
-    width: 100%;
   }
 }

@@ -1,3 +1,61 @@
-<p>
-  meetings works!
-</p>
+<div class="c-meeting-info">
+  <div>股東會資訊</div>
+  <div>
+    <div class="c-info-search">
+      <div>
+        <label>資料排序方式:</label>
+        <select [(ngModel)]="selected1">
+          <option *ngFor="let o of options1" [value]="o.value">
+            {{o.name}}
+          </option>
+        </select>
+        <button (click)="doOrderType($event)">查詢</button>
+      </div>
+      <div>
+        <label>搜尋股東會:</label>
+        <select [(ngModel)]="selected2">
+          <option *ngFor="let o of options2" [value]="o.value">
+            {{o.name}}
+          </option>
+        </select>
+        <button (click)="doSearchType($event)">查詢</button>
+      </div>
+    </div>
+    <div class="c-info-result">
+      <table>
+        <thead>
+          <tr>
+            <th>證券代號/名稱</th>
+            <th>股東會日期</th>
+            <th>投票起迄日期</th>
+            <th>服務單位</th>
+            <th>聯絡電話</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6702 復興航空</td>
+            <td>106/01/11</td>
+            <td>105/12/27~106/01/08</td>
+            <td>群益金鼎證券</td>
+            <td>(02)2703-500</td>
+          </tr>
+          <tr>
+            <td>6702 復興航空</td>
+            <td>106/01/11</td>
+            <td>105/12/27~106/01/08</td>
+            <td>群益金鼎證券</td>
+            <td>(02)2703-500</td>
+          </tr>
+          <tr>
+            <td>6702 復興航空</td>
+            <td>106/01/11</td>
+            <td>105/12/27~106/01/08</td>
+            <td>群益金鼎證券</td>
+            <td>(02)2703-500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
