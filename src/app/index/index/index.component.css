@@ -1,0 +1,216 @@
+.border-box * {
+  box-sizing: border-box;
+}
+.c-news {
+  margin-top: 10px;
+  overflow: auto;
+}
+.c-news .c-news-label {
+  text-align: right;
+  float: left;
+  padding: 10px;
+  width: 15%;
+}
+.c-news .c-news-container {
+  background-color: lightblue;
+  padding: 10px;
+  float: left;
+  width: 85%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.c-brand {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.c-brand .c-brand-item {
+  margin: 50px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #888888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-begin {
+  margin-top: 10px;
+  overflow: auto;
+}
+.c-begin .c-begin-item {
+  border: 1px gray solid;
+  float: left;
+  color: black;
+  text-decoration: none;
+  background: lightseagreen;
+  width: 50%;
+  text-align: center;
+}
+.c-begin .c-begin-item :hover {
+  background: darkolivegreen;
+}
+.c-begin .c-begin-item a {
+  padding: 15px;
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+.c-link {
+  margin-top: 10px;
+  overflow: auto;
+}
+.c-link .c-link-otherlinks {
+  float: left;
+  width: 70%;
+}
+.c-link-otherlinks .c-link-otherlinks-item {
+  width: 30%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.c-link .c-link-relative {
+  float: left;
+  width: 30%;
+  min-height: 200px;
+  border: #888888 solid 1px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.c-link .c-link-relative .c-link-relativetitle {
+  padding: 5px;
+}
+.c-link .c-link-relative .c-link-relativetitle h4 {
+  display: inline;
+}
+.c-link .c-link-relative .c-link-relativetitle a {
+  float: right;
+  text-decoration: none;
+  color: black;
+}
+.c-link .c-link-relative ul.c-link-relativelinks {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+.c-link .c-link-relative ul.c-link-relativelinks a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 股東會資訊part */
+.c-meeting-info {
+  margin-top: 10px;
+}
+.c-meeting-info > div:nth-child(1) {
+  border: 1px solid black;
+  padding: 4px;
+  width: 15%;
+  background: #d4d4d4;
+  text-align: center;
+}
+.c-meeting-info > div:nth-child(2) {
+  border: 1px solid black;
+  padding: 20px;
+}
+.c-info-search > div {
+  display: inline-block;
+  width: 49%;
+  margin: 5px 0;
+}
+.c-info-result table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.c-info-result th,
+.c-info-result td {
+  border-bottom: 1px solid gray;
+  text-align: center;
+  padding: 4px;
+}
+
+@media (max-width: 979px) {
+  .c-news .c-news-label {
+    width: 20%;
+  }
+  .c-news .c-news-container {
+    width: 80%;
+  }
+  .c-brand {
+    display: block;
+    justify-content: unset;
+    flex-wrap: unset;
+  }
+  .c-brand .c-brand-item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .c-brand .container {
+    overflow: auto;
+  }
+  .c-brand-item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .c-begin .c-begin-item {
+    float: unset;
+    width: 100%;
+  }
+  .c-link .c-link-otherlinks {
+    width: 100%;
+    float: unset;
+    text-align: center;
+  }
+  .c-link-otherlinks .c-link-otherlinks-item {
+    width: 40%;
+  }
+  .c-link .c-link-relative {
+    margin: auto;
+    float: unset;
+    width: 80%;
+    min-height: 200px;
+  }
+
+  /* 股東會資訊part */
+  .c-meeting-info > div:nth-child(1) {
+    width: auto;
+  }
+  .c-meeting-info > div:nth-child(2) {
+    border: none;
+  }
+
+  .c-info-search > div {
+    width: 100%;
+  }
+  .c-info-search > div > label {
+    display: block;
+  }
+
+  .c-info-result tr {
+    display: block;
+    padding: 0 20px;
+  }
+  .c-info-result tbody tr {
+    border: 1px solid gray;
+    margin: 10px 0;
+    padding: 20px;
+  }
+  .c-info-result th,
+  .c-info-result td {
+    display: inline-block;
+    border: none;
+    text-align: left;
+    padding: 4px 0;
+  }
+  .c-info-result th,
+  .c-info-result td {
+    width: 49%;
+  }
+  .c-info-result th:nth-child(3),
+  .c-info-result td:nth-child(3) {
+    width: 100%;
+  }
+}
