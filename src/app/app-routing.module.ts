@@ -8,7 +8,11 @@ const routes: Routes = [
     component: MainComponent,
     loadChildren: './index/index.module#IndexModule'
   },
-  { path: 'login', loadChildren: './login/login.module#LoginModule' }
+  {
+    path: 'login',
+    component: MainComponent,
+    loadChildren: './login/login.module#LoginModule'
+  }
 ];
 
 @NgModule({
