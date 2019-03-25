@@ -1,31 +1,51 @@
 <main class="l-content m">
-    <h2>使用者登入</h2>
-    <div>
-        <div class="l-tag">
-            <button class="l-tag-item m">發行公司．股務代理機構</button>
-        </div>
-        <div class="l-form m">
-            <div class="l-field">
-                <label class="l-fieldname">單位代號：</label>
-                <input class="l-fielddata" />
-            </div>
-            <div class="l-field">
-                <label class="l-fieldname">憑證種類：</label>
-                <select class="l-fielddata ">
-                        <option>ss</option>
-                        <option>aa</option>
-                    </select>
-            </div>
-            <div class="l-field">
-                <label class="l-fieldname">使用者帳號：</label>
-                <input class="l-fielddata" />
-            </div>
-            <div class="l-field">
-                <label class="l-fieldname">使用者密碼：</label>
-                <input class="l-fielddata" />
-            </div>
-            <button class=" l-btn" onclick="javascript:location.href='terms.html'">登入</button>
-        </div>
+  <h2>使用者登入</h2>
+  <div>
+    <div class="l-tag">
+      <button class="l-tag-item m">發行公司．股務代理機構</button>
     </div>
-    <button class=" l-btn">資料下載</button>
+    <div class="l-form m" [formGroup]="login">
+      <div class="l-field">
+        <label class="l-fieldname">單位代號：</label>
+        <input class="l-fielddata" formControlName="unitId" />
+        <p *ngIf="unitId.dirty && unitId.invalid" class="l-p-msg">
+          請輸入單位代號
+        </p>
+      </div>
+      <div class="l-field">
+        <label class="l-fieldname">憑證種類：</label>
+        <select class="l-fielddata" formControlName="proofParaId">
+          <option *ngFor="let item of proofParaList" [value]="item.val">
+            {{ item.str }}
+          </option>
+        </select>
+        <p *ngIf="proofParaId.dirty && proofParaId.invalid" class="l-p-msg">
+          請選擇憑證種類
+        </p>
+      </div>
+      <div class="l-field">
+        <label class="l-fieldname">使用者帳號：</label>
+        <input class="l-fielddata" formControlName="userId" />
+        <div *ngIf="userId.dirty && userId.invalid">
+          <p *ngIf="userId.errors['required']" class="l-p-msg">
+            請輸入使用者帳號
+          </p>
+          <p *ngIf="userId.errors['IdValidator']" class="l-p-msg">
+            請輸入正確的格式
+          </p>
+        </div>
+      </div>
+      <div class="l-field">
+        <label class="l-fieldname">使用者密碼：</label>
+        <input class="l-fielddata" formControlName="userPassword" />
+        <p *ngIf="userPassword.dirty && userPassword.invalid" class="l-p-msg">
+          請輸入使用者密碼
+        </p>
+      </div>
+      <button class=" l-btn" [disabled]="login.invalid" (click)="doLogin()">
+        登入
+      </button>
+    </div>
+  </div>
+  <button class=" l-btn">資料下載</button>
 </main>
