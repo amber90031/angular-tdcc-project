@@ -36,9 +36,23 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   doLogin() {
-    sessionStorage.setItem('userid', this.userId.value);
-    alert('登入成功');
-    this.router.navigate(['/login/terms']);
+    const id = this.userId.value;
+    const pwd = this.userPassword.value;
+
+    fetch('/api/userData.json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.some(item => item.userid === id && item.userPWD === pwd)) {
+          sessionStorage.setItem('userid', this.userId.value);
+          alert('登入成功');
+          this.router.navigate(['/login/terms']);
+        } else {
+          alert('登入失敗');
+        }
+      })
+      .catch(err => {
+        alert('無法連到userData');
+      });
   }
 
   get unitId(): AbstractControl {
