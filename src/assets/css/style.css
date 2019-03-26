@@ -30,9 +30,10 @@ button:hover {
 
 button:disabled,
 button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+  border: 1px solid #e4e6e9;
+  background-color: #e0e0e0;
+  color: #ffffff;
+  cursor: not-allowed;
 }
 
 /* input */
