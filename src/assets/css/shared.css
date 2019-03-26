@@ -4,7 +4,6 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 5em;
-  background-color: #fff;
   border-bottom: 1px solid rgb(149, 152, 154);
   position: fixed;
   top: 0;
@@ -27,6 +26,17 @@ header {
 
 .header-logo img {
   height: 80%;
+}
+
+/*header-user*/
+.header-user {
+  margin-left: 5%;
+}
+
+/*header-terms*/
+.header-terms {
+  display: none;
+  font-size: 24px;
 }
 
 /*header-menu*/
@@ -79,6 +89,14 @@ footer div {
   header {
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+  /*header-user*/
+  .header-user {
+    display: none;
+  }
+  /*header-terms*/
+  .header-terms {
+    display: block;
   }
   /*header-menu*/
   header label {
