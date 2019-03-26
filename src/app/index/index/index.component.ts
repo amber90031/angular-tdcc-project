@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, timer } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, timer, Subscription } from 'rxjs';
 import { AnnoucementService } from 'src/app/service/annoucement.service';
 
 @Component({
@@ -7,11 +7,13 @@ import { AnnoucementService } from 'src/app/service/annoucement.service';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit, OnDestroy {
   // 公告切換秒數
   anmtSecond: number;
   // 公告
   anmtStr: string = '';
+
+  anmt: Subscription;
 
   constructor(private anmtSrv: AnnoucementService) {
     console.log('constructor');
@@ -21,16 +23,19 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     console.log('on init');
     this.anmtSrv.getAnnoucementData();
-    this.changeAnmtStr();
+    this.subscribeAnmt();
+  }
+
+  ngOnDestroy(): void {
+    this.unSubscribeAnmt();
   }
 
   /**
-   * 修改最新公告
-   *
+   * 註冊最新公告控制器
    * @memberof IndexComponent
    */
-  changeAnmtStr() {
-    timer(0, 1000 * this.anmtSecond).subscribe(tmr => {
+  subscribeAnmt() {
+    this.anmt = timer(0, 1000 * this.anmtSecond).subscribe(tmr => {
       if (this.anmtSrv.anmtList.length > 0) {
         const anmtLength = this.anmtSrv.anmtList.length;
         const anmtCnt = (tmr + anmtLength) % anmtLength;
@@ -38,5 +43,14 @@ export class IndexComponent implements OnInit {
         console.log(this.anmtStr);
       }
     });
+  }
+  /**
+   * 反註冊最新公告控制器
+   * @memberof IndexComponent
+   */
+  unSubscribeAnmt() {
+    if (this.anmt) {
+      this.anmt.unsubscribe();
+    }
   }
 }

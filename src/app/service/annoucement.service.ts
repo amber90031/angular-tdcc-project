@@ -16,7 +16,6 @@ export class AnnoucementService {
     this.hcSrv
       .get('/assets/json/annoucement.json')
       .subscribe((response: any) => {
-        console.log(response);
         this.anmtList = response as Annoucement[];
       });
   }
