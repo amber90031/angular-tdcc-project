@@ -37,7 +37,11 @@
       </div>
       <div class="l-field">
         <label class="l-fieldname">使用者密碼：</label>
-        <input class="l-fielddata" formControlName="userPassword" />
+        <input
+          type="password"
+          class="l-fielddata"
+          formControlName="userPassword"
+        />
         <p *ngIf="userPassword.dirty && userPassword.invalid" class="l-p-msg">
           請輸入使用者密碼
         </p>
