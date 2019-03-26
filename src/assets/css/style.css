@@ -28,6 +28,14 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+button:disabled,
+button[disabled] {
+  border: 1px solid #e4e6e9;
+  background-color: #e0e0e0;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
 /* input */
 
 input {
