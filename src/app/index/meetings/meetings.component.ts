@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { MeetingService } from 'src/app/service/meeting.service';
+import { Meeting } from 'src/app/share/meeting';
 
 @Component({
   selector: 'app-meetings',
   templateUrl: './meetings.component.html',
   styleUrls: ['./meetings.component.css']
 })
+
 export class MeetingsComponent implements OnInit {
-
-  selected1 = '0';
-  selected2 = '0';
-
+  // 下拉選單 內容
   options1 = [
     { name: '請選擇', value: 0 },
     { name: '依股東會日期由遠至近排序', value: 1 },
@@ -18,7 +18,6 @@ export class MeetingsComponent implements OnInit {
     { name: '依投票起日由近至遠排序', value: 4 },
     { name: '依投票起日由遠至近排序', value: 5 }
   ];
-
   options2 = [
     { name: '請選擇', value: 0 },
     { name: '依證券代號搜尋', value: 1 },
@@ -26,9 +25,25 @@ export class MeetingsComponent implements OnInit {
     { name: '依股東會日期搜尋', value: 3 }
   ];
 
-  constructor() { }
+  // 下拉選單 預設值
+  selected1 = '0';
+  selected2 = '0';
+
+  // 搜尋股東會
+  keyword: string;
+
+  // 股東會資訊
+  get infoList() {
+    console.log('get list(): ' + this.mSrv.infoList);
+    return this.mSrv.infoList;
+  }
+
+  constructor(private mSrv: MeetingService) {
+  }
 
   ngOnInit() {
+    this.mSrv.getMeetingInfoList();
+    console.log(this.mSrv.infoList);
   }
 
   doOrderType($event) {
@@ -37,5 +52,6 @@ export class MeetingsComponent implements OnInit {
 
   doSearchType($event) {
     console.log(this.selected2);
+    console.log(this.keyword);
   }
 }
