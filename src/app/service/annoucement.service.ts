@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Annoucement } from '../share/annoucement';
-import { Observable, timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class AnnoucementService {
 
   getAnnoucementData() {
     this.hcSrv
-      .get('/assets/json/annoucement.json')
+      .get('/api/annoucement.json')
       .subscribe((response: any) => {
         this.anmtList = response as Annoucement[];
       });
