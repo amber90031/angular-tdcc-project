@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, timer } from 'rxjs';
-import { take, map } from 'rxjs/operators';
+import { AnnoucementService } from 'src/app/service/annoucement.service';
 
 @Component({
   selector: 'app-index',
@@ -8,20 +8,19 @@ import { take, map } from 'rxjs/operators';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  // 公告
-  anmtStr: string;
   // 公告切換秒數
   anmtSecond: number;
-  // 公告內容
-  anmtList: string[] = ['aaa', 'bbb', 'ccc', 'ddd'];
+  // 公告
+  anmtStr: string = '';
 
-  constructor() {
-    this.anmtSecond = 5;
+  constructor(private anmtSrv: AnnoucementService) {
     console.log('constructor');
+    this.anmtSecond = 5;
   }
 
   ngOnInit() {
     console.log('on init');
+    this.anmtSrv.getAnnoucementData();
     this.changeAnmtStr();
   }
 
@@ -32,9 +31,12 @@ export class IndexComponent implements OnInit {
    */
   changeAnmtStr() {
     timer(0, 1000 * this.anmtSecond).subscribe(tmr => {
-      const anmtLength = this.anmtList.length;
-      const anmtCnt = (tmr + anmtLength) % anmtLength;
-      this.anmtStr = this.anmtList[anmtCnt];
+      if (this.anmtSrv.anmtList.length > 0) {
+        const anmtLength = this.anmtSrv.anmtList.length;
+        const anmtCnt = (tmr + anmtLength) % anmtLength;
+        this.anmtStr = this.anmtSrv.anmtList[anmtCnt].data;
+        console.log(this.anmtStr);
+      }
     });
   }
 }
