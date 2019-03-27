@@ -18,7 +18,7 @@
             {{o.name}}
           </option>
         </select>
-        <input *ngIf="selected2 != '0'" [(ngModel)]="keyword" placeholder="請輸入">
+        <input *ngIf="selected2 != '0'" [(ngModel)]="keyword" placeholder="請輸入" (focusout)="formatKeywords(txtKeyword.value)" #txtKeyword>
         <button (click)="doSearchType($event)">查詢</button>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeetingService } from 'src/app/service/meeting.service';
 import { Meeting } from 'src/app/share/meeting';
+import { escapeRegExp } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-meetings',
@@ -52,5 +53,16 @@ export class MeetingsComponent implements OnInit {
 
   doSearchType($event) {
     this.mSrv.searchMeetingInfoList(this.selected2, this.keyword);
+  }
+
+  formatKeywords(kw: string) {
+    if (this.selected2 === '3') {
+      if (kw) {
+        if (kw.length === 7 && new RegExp('[0-9]{7}').test(kw)) {
+          const mkw = kw.substr(0, 3) + '/' + kw.substr(3, 2) + '/' + kw.substr(5, 2);
+          this.keyword = mkw;
+        }
+      }
+    }
   }
 }
