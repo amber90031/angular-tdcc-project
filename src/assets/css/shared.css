@@ -24,10 +24,6 @@ header {
   align-items: center;
 }
 
-.header-logo img {
-  height: 80%;
-}
-
 /*header-user*/
 .header-user {
   margin-left: 5%;
