@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MeetingService } from 'src/app/service/meeting.service';
-import { Meeting } from 'src/app/share/meeting';
 
 @Component({
   selector: 'app-meetings',
@@ -29,8 +28,8 @@ export class MeetingsComponent implements OnInit {
   selected1 = '0';
   selected2 = '0';
 
-  // 搜尋股東會
-  keyword: string;
+  // 搜尋股東會 預設值
+  keyword = '';
 
   // 股東會資訊
   get infoList() {
@@ -46,11 +45,11 @@ export class MeetingsComponent implements OnInit {
     console.log(this.mSrv.list);
   }
 
-  doOrderType($event) {
-    this.mSrv.orderMeetingInfoList(this.selected1);
-  }
-
-  doSearchType($event) {
-    this.mSrv.searchMeetingInfoList(this.selected2, this.keyword);
+  doSearch($event) {
+    if (this.selected2 === '3' && this.keyword === '') {
+      alert('請輸入股東會日期');
+      return;
+    }
+    this.mSrv.searchAndOrderMeetingInfoList(this.selected1, this.selected2, this.keyword);
   }
 }

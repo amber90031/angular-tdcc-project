@@ -9,7 +9,7 @@
             {{o.name}}
           </option>
         </select>
-        <button (click)="doOrderType($event)">查詢</button>
+        <button (click)="doSearch($event)">查詢</button>
       </div>
       <div>
         <label>搜尋股東會：</label>
@@ -19,7 +19,7 @@
           </option>
         </select>
         <input *ngIf="selected2 != '0'" [(ngModel)]="keyword" placeholder="請輸入">
-        <button (click)="doSearchType($event)">查詢</button>
+        <button (click)="doSearch($event)">查詢</button>
       </div>
     </div>
     <div class="c-info-result">
@@ -41,13 +41,6 @@
             <td>{{info.unit}}</td>
             <td>{{info.phone}}</td>
           </tr>
-          <!-- <tr>
-            <td>6702 復興航空</td>
-            <td>106/01/11</td>
-            <td>105/12/27~106/01/08</td>
-            <td>群益金鼎證券</td>
-            <td>(02)2703-500</td>
-          </tr> -->
         </tbody>
       </table>
     </div>
