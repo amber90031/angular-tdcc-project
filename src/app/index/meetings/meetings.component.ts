@@ -34,24 +34,23 @@ export class MeetingsComponent implements OnInit {
 
   // 股東會資訊
   get infoList() {
-    console.log('get list(): ' + this.mSrv.infoList);
-    return this.mSrv.infoList;
+    // console.log('get infoList(): ' + this.mSrv.newList);
+    return this.mSrv.newList;
   }
 
   constructor(private mSrv: MeetingService) {
   }
 
   ngOnInit() {
-    this.mSrv.getMeetingInfoList();
-    console.log(this.mSrv.infoList);
+    this.mSrv.loadMeetingInfoList();
+    console.log(this.mSrv.list);
   }
 
   doOrderType($event) {
-    console.log(this.selected1);
+    this.mSrv.orderMeetingInfoList(this.selected1);
   }
 
   doSearchType($event) {
-    console.log(this.selected2);
-    console.log(this.keyword);
+    this.mSrv.searchMeetingInfoList(this.selected2, this.keyword);
   }
 }
