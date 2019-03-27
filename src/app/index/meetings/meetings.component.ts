@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MeetingService } from 'src/app/service/meeting.service';
-import { escapeRegExp } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-meetings',
@@ -43,10 +42,12 @@ export class MeetingsComponent implements OnInit {
 
   ngOnInit() {
     this.mSrv.loadMeetingInfoList();
-    console.log(this.mSrv.list);
   }
 
-  doSearch($event) {
+  /**
+   * 搜尋股東會資訊
+   */
+  doSearch() {
     if (this.selected2 === '3' && this.keyword === '') {
       alert('請輸入股東會日期');
       return;
@@ -54,6 +55,10 @@ export class MeetingsComponent implements OnInit {
     this.mSrv.searchAndOrderMeetingInfoList(this.selected1, this.selected2, this.keyword);
   }
 
+  /**
+   * 日期搜尋 格式化
+   * @param kw 關鍵字
+   */
   formatKeywords(kw: string) {
     if (this.selected2 === '3') {
       if (kw) {

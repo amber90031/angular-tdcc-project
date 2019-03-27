@@ -12,23 +12,35 @@ export class MeetingService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * 載入全部股東會資料
+   */
   loadMeetingInfoList() {
     this.http.get('/api/meetingInfo.json')
       .subscribe(response => {
         this.list = response as Meeting[];
         this.newList = this.list;
-        console.log('Srv-loadMeetingInfoList()');
       });
   }
 
+  /**
+   * 搜尋並排列股東會資料
+   * @param orderType 排序方式
+   * @param searchType 搜尋欄位
+   * @param keyword 搜尋關鍵字
+   */
   searchAndOrderMeetingInfoList(orderType: string, searchType: string, keyword: string) {
     this.searchMeetingInfoList(this.list, searchType, keyword);
-    console.log('step 1 end');
     this.orderMeetingInfoList(this.newList, orderType);
   }
 
+  /**
+   * 排列股東會資料
+   * @param list 目標資料列
+   * @param orderType 排序方式
+   */
   orderMeetingInfoList(list: Meeting[], orderType: string) {
-    console.log('orderType: ' + orderType);
+    // console.log('orderType: ' + orderType);
     switch (orderType) {
       case '1':
         // 股東會日期由遠至近
@@ -66,8 +78,14 @@ export class MeetingService {
     }
   }
 
+  /**
+   * 搜尋股東會資料
+   * @param list 目標資料列
+   * @param searchType 搜尋欄位
+   * @param keyword 搜尋關鍵字
+   */
   searchMeetingInfoList(list: Meeting[], searchType: string, keyword: string) {
-    console.log('searchType: ' + searchType + ',keyword: ' + keyword);
+    // console.log('searchType: ' + searchType + ',keyword: ' + keyword);
     if (keyword) {
       switch (searchType) {
         case '1':
@@ -91,6 +109,11 @@ export class MeetingService {
     }
   }
 
+  /**
+   * Array排序 for sort()
+   * @param a 排前
+   * @param b 排後
+   */
   sortCompare(a, b): number {
     if (a > b) { return 1; }
     if (a < b) { return -1; }

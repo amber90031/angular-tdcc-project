@@ -9,7 +9,7 @@
             {{o.name}}
           </option>
         </select>
-        <button (click)="doSearch($event)">查詢</button>
+        <button (click)="doSearch()">查詢</button>
       </div>
       <div>
         <label>搜尋股東會：</label>
@@ -19,7 +19,7 @@
           </option>
         </select>
         <input *ngIf="selected2 != '0'" [(ngModel)]="keyword" placeholder="請輸入" (focusout)="formatKeywords(txtKeyword.value)" #txtKeyword>
-        <button (click)="doSearch($event)">查詢</button>
+        <button (click)="doSearch()">查詢</button>
       </div>
     </div>
     <div class="c-info-result">
